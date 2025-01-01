@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  distDir: 'out',
+  // Remove distDir as it's handled automatically with output: 'export'
 };
 
 export default nextConfig;
