@@ -13,3 +13,10 @@ export default function ModelPage({ params }: { params: Promise<{ id: string }> 
 
   return <ModelDetail model={model} />;
 }
+
+// Required for static export with dynamic routes
+export function generateStaticParams() {
+  return models.map((model) => ({
+    id: model.id,
+  }));
+}
