@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "yarn build && gh-pages -d .next"
   },
   "dependencies": {
     "@react-three/drei": "^9.120.5",
