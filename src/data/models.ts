@@ -10,7 +10,7 @@ export interface Model3D {
 export const models: Model3D[] = [
   {
     id: "1",
-    title: "Smart Home Hub",
+    title: "hello",
     description: "Next-generation IoT control center with holographic display",
     fullDescription: "This cutting-edge smart home hub features a revolutionary holographic interface that brings your IoT control to life. The device incorporates advanced AI processing, seamless connectivity options, and an elegant design that complements any modern home. With support for multiple protocols and expandable functionality, it represents the future of home automation.",
     imageUrl: "/portfolio/images/smart-home-hub.png",
