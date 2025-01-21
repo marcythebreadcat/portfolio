@@ -10,15 +10,15 @@ export interface Model3D {
 export const models: Model3D[] = [
   {
     id: "1",
-    title: "Smart Home Hub",
+    title: "Artficial muscle",
     description: "Next-generation IoT control center with holographic display",
     fullDescription: "This cutting-edge smart home hub features a revolutionary holographic interface that brings your IoT control to life. The device incorporates advanced AI processing, seamless connectivity options, and an elegant design that complements any modern home. With support for multiple protocols and expandable functionality, it represents the future of home automation.",
-    imageUrl: "/portfolio/images/smart-home-hub.png",
+    imageUrl: "/portfolio/images/muscle.png",
     modelUrl: "/portfolio/models/Car.glb",
   },
   {
     id: "2",
-    title: "Quantum Computing Processor",
+    title: "Bionic hand",
     description: "Revolutionary quantum processor with superconducting circuits",
     fullDescription: "A breakthrough in quantum computing technology, this processor utilizes superconducting circuits and advanced error correction to achieve unprecedented quantum coherence times. The innovative cooling system and precise control mechanisms enable stable qubit operations at near-absolute zero temperatures. Its modular design allows for scalable quantum computing applications.",
     imageUrl: "/portfolio/images/quantum-computing-processor.png",
