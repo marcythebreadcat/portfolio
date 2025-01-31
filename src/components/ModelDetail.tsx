@@ -25,19 +25,23 @@ const ModelViewer = dynamic(() => import('./ModelViewer').then(mod => mod.ModelV
 export function ModelDetail({ model }: { model: Model3D }) {
   const router = useRouter();
   const [showModel, setShowModel] = useState(false);
-  const scrollPosition = useRef(window.scrollY);
+  const scrollPosition = useRef<number>(0);
 
   useEffect(() => {
-    // Store the scroll position when component mounts
-    if(!scrollPosition.current) scrollPosition.current = window.scrollY;
+    // Only access window on the client side
+    if (typeof window !== 'undefined') {
+      scrollPosition.current = window.scrollY;
+    }
   }, []);
 
   const handleClose = () => {
-    // Restore scroll position before navigation
-    window.scrollTo({
-      top: scrollPosition.current,
-      behavior: 'instant'
-    });
+    // Only access window on the client side
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: scrollPosition.current,
+        behavior: 'instant'
+      });
+    }
   
     // Check if there's history to go back to
     if (window.history.length > 2) {
