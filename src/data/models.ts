@@ -10,51 +10,98 @@ export interface Model3D {
 export const models: Model3D[] = [
   {
     id: "1",
-    title: "Artficial muscle",
-    description: "Next-generation IoT control center with holographic display",
-    fullDescription: "This cutting-edge smart home hub features a revolutionary holographic interface that brings your IoT control to life. The device incorporates advanced AI processing, seamless connectivity options, and an elegant design that complements any modern home. With support for multiple protocols and expandable functionality, it represents the future of home automation.",
+    title: "Nitinol Wire Artificial Muscle Design",
+    description:
+      "Next-generation biomimetic actuator with ultra-fast response time",
+    fullDescription: `
+      This innovative design incorporates nitinol shape memory alloy wires wrapped in a shock spring to create a compact, highly responsive artificial muscle. The nitinol wires provide the contractile force, while the outer spring enables rapid extension.</br></br>
+      To enhance the speed and efficiency of the actuation, the wires are coated in copper to facilitate faster cooling after power is cut. Additionally, a constant water flow system is integrated to instantly cool the nitinol, enabling rapid retraction.</br></br>
+      This design tackles common challenges in nitinol wire muscles by seamlessly integrating the spring mechanism and cooling system. The result is a compact, high-performance actuator that mimics the dynamic properties of natural muscle tissue. </br>
+      <h3 class="text-xl font-semibold text-white">Key features:</h3>
+      <ul>
+        <li>Nitinol wire provides strong contractile force</li>
+        <li>Shock spring enables rapid extension</li>
+        <li>Copper coating and water cooling system enable fast response time</li>
+        <li>Compact, biomimetic design for integration into complex systems</li>
+      </ul>
+      This artificial muscle prototype demonstrates innovative solutions to common challenges in shape-memory alloy actuators, making it a promising technology for a wide range of applications.
+    `,
     imageUrl: "/portfolio/images/muscle.png",
-    modelUrl: "/portfolio/models/Car.glb",
+    modelUrl: "/portfolio/models/muscle.glb",
   },
   {
     id: "2",
-    title: "Bionic hand",
-    description: "Revolutionary quantum processor with superconducting circuits",
-    fullDescription: "A breakthrough in quantum computing technology, this processor utilizes superconducting circuits and advanced error correction to achieve unprecedented quantum coherence times. The innovative cooling system and precise control mechanisms enable stable qubit operations at near-absolute zero temperatures. Its modular design allows for scalable quantum computing applications.",
-    imageUrl: "/portfolio/images/quantum-computing-processor.png",
-    modelUrl: "/portfolio/models/Car.glb",
+    title: "3d printer",
+    description:
+      "Next-generation rapid 3D house printer with multi-nozzle parallel construction",
+    fullDescription: `This innovative 3D house printer leverages a centralized, single-point design with three simultaneous printing nozzles to enable rapid, high-strength construction.</br></br>
+
+      The system utilizes a proprietary recycled plastic-concrete material mix, proven to be 30% stronger than traditional concrete. Three printing nozzles operate in parallel, allowing the system to build three layers simultaneously, significantly accelerating the construction process.</br></br>
+
+      Additionally, the printer employs UV curing technology to instantly harden the outer shell, eliminating lengthy drying times and further expediting the build process. With this advanced approach, the system is capable of constructing an entire house within 24 hours—an unprecedented improvement over existing 3D house printing methods.</br></br>
+
+      The single-point configuration streamlines setup and calibration compared to multi-location printers, while the parallel printing approach and instant curing combine to deliver unmatched construction speed without compromising material integrity.</br>
+
+      <h3 class="text-xl font-semibold text-white">Key features:</h3>
+      <ul>
+        <li>Utilizes a proprietary recycled plastic-concrete mix, 30% stronger than traditional concrete</li>
+        <li>Three parallel printing nozzles enable simultaneous multi-layer construction</li>
+        <li>UV curing technology instantly hardens the outer shell for rapid building</li>
+        <li>Capable of constructing an entire house in just 24 hours</li>
+        <li>Single-point design simplifies setup and enhances printing precision</li>
+      </ul>
+
+      This innovative 3D house printer represents a transformative step forward in sustainable, efficient home-building technologies.
+`,
+    imageUrl: "/portfolio/images/printer.png",
+    modelUrl: "/portfolio/models/printer.glb",
   },
   {
     id: "3",
-    title: "Neural Interface Headset",
-    description: "Advanced brain-computer interface with haptic feedback",
-    fullDescription: "This state-of-the-art neural interface headset combines high-resolution EEG sensors with revolutionary haptic feedback technology. Designed for both medical and consumer applications, it enables direct brain-computer communication with unprecedented accuracy. The ergonomic design ensures comfort during extended use while maintaining optimal sensor contact.",
-    imageUrl: "/portfolio/images/neural-interface-headset.png",
-    modelUrl: "/portfolio/models/Car.glb",
+    title: "Pencilcase",
+    description:
+      "Transformable pencil case with built-in inflatable nap pillow and auto-deflation timer",
+    fullDescription: `This pencil case design incorporates a unique dual-purpose feature—it can transform into an inflatable pillow for quick naps.</br></br>
+
+      The case includes a built-in air pump on the right side, allowing effortless inflation of the pillow. On the left side, a timer alarm (5/10/30 minutes) is integrated to automatically release the air once the set time is up, ensuring a controlled and convenient resting experience.</br></br>
+
+      This innovative feature enables users to take short rest breaks during class or work hours by quickly converting the pencil case into a portable pillow. The flexibility to switch between a practical storage solution and a napping aid makes it an ideal accessory for busy students and professionals.</br>
+
+      <h3 class="text-xl font-semibold text-white">Key features:</h3>
+      <ul>
+        <li>Built-in air pump for effortless pillow inflation</li>
+        <li>Timer alarm (5/10/30 minutes) for automatic deflation</li>
+        <li>Compact and portable design for both storage and comfort</li>
+        <li>Ideal for students and professionals needing quick rest breaks</li>
+      </ul>
+
+      This innovative design seamlessly combines everyday utility with ergonomic comfort, offering a smart, hands-free solution for on-the-go relaxation.
+`,
+    imageUrl: "/portfolio/images/pencilcase.png",
+    modelUrl: "/portfolio/models/pinal.glb",
   },
   {
     id: "4",
-    title: "Modular Drone System",
-    description: "Customizable drone platform with hot-swappable components",
-    fullDescription: "A revolutionary approach to drone technology, this modular system features hot-swappable components for rapid mission reconfiguration. The advanced flight control system adapts in real-time to changes in payload and configuration. With industrial-grade connectors and a robust communication protocol, it sets new standards for flexible aerial platforms.",
-    imageUrl: "/portfolio/images/modular-drone-system.png",
-    modelUrl: "/portfolio/models/Car.glb",
+    title: "Bionic hand",
+    description:
+      "High-dexterity prosthetic hand with full wrist articulation and DIY accessibility",
+    fullDescription: `This artificial hand design incorporates impressive functionality, mimicking the range of motion and dexterity of a real human hand.</br></br>
+
+      The hand is capable of performing all the same movements as a natural hand, including full wrist tilt and rotation. Constructed using commercially available parts, it allows individuals to potentially build their own prosthetic hand, making advanced prosthetics more accessible.</br></br>
+
+      This level of articulation and flexibility surpasses what is typically found in current bionic hand designs. The ability to closely replicate natural hand biomechanics marks a significant advancement in prosthetic technology.</br>
+
+      <h3 class="text-xl font-semibold text-white">Key features:</h3>
+      <ul>
+        <li>Full wrist tilt and rotation for natural movement</li>
+        <li>Constructed using commercially available components</li>
+        <li>Higher articulation and flexibility than most bionic hands</li>
+        <li>Customizable and accessible for individuals building their own prosthetic</li>
+      </ul>
+
+      By leveraging off-the-shelf components, this design offers a customizable, high-performing prosthetic solution. It represents an innovative step forward in artificial hand technology, enhancing accessibility and functionality.
+`,
+    imageUrl: "/portfolio/images/bio-hand.png",
+    modelUrl: "/portfolio/models/complete_arm.glb",
   },
-  {
-    id: "5",
-    title: "Augmented Reality Glasses",
-    description: "Next-gen AR glasses with advanced spatial mapping",
-    fullDescription: "These cutting-edge AR glasses incorporate advanced waveguide optics and precise spatial mapping technology to deliver immersive mixed reality experiences. The custom-designed micro-LED displays offer unprecedented brightness and color accuracy, while the integrated AI co-processor enables real-time environmental understanding and interaction.",
-    imageUrl: "/portfolio/images/augmented-reality-glasses.png",
-    modelUrl: "/portfolio/models/Car.glb",
-  },
-  {
-    id: "6",
-    title: "Energy Harvesting Module",
-    description: "Self-sustaining power system with multi-source integration",
-    fullDescription: "An innovative energy harvesting solution that combines multiple power sources including solar, thermal, and kinetic energy. The intelligent power management system optimizes energy collection and storage based on environmental conditions. Perfect for IoT devices and remote sensing applications, it represents the future of sustainable electronics.",
-    imageUrl: "/portfolio/images/energy-harvesting-module.png",
-    modelUrl: "/portfolio/models/Car.glb",
-  }
-  // Add more models as needed
 ];

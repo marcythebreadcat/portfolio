@@ -4,8 +4,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { Model3D } from '@/data/models';
 import { useRouter } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
 const ModelViewer = dynamic(() => import('./ModelViewer').then(mod => mod.ModelViewer), {
   ssr: false,
@@ -24,21 +25,26 @@ const ModelViewer = dynamic(() => import('./ModelViewer').then(mod => mod.ModelV
 export function ModelDetail({ model }: { model: Model3D }) {
   const router = useRouter();
   const [showModel, setShowModel] = useState(false);
+  const scrollPosition = useRef(window.scrollY);
 
   useEffect(() => {
     // Store the scroll position when component mounts
-    const scrollPosition = window.scrollY;
-    return () => {
-      // Restore scroll position when component unmounts
-      window.scrollTo({
-        top: scrollPosition,
-        behavior: 'instant'
-      });
-    };
+    if(!scrollPosition.current) scrollPosition.current = window.scrollY;
   }, []);
 
   const handleClose = () => {
-    router.back();
+    // Restore scroll position before navigation
+    window.scrollTo({
+      top: scrollPosition.current,
+      behavior: 'instant'
+    });
+  
+    // Check if there's history to go back to
+    if (window.history.length > 2) {
+      router.back();
+    } else {
+      router.push('/');
+    }
   };
 
   const handleViewModel = () => {
@@ -79,8 +85,19 @@ export function ModelDetail({ model }: { model: Model3D }) {
               >
                 ✕
               </motion.button>
-              <div className="w-full h-screen">
-                <ModelViewer url={model.modelUrl} />
+              <div className="w-screen h-screen relative">
+                <Suspense fallback={<div className="w-full h-full flex items-center justify-center">
+                  <div className="relative w-24 h-24">
+                    <div className="absolute inset-0 border-4 border-amber-500/20 rounded-full"></div>
+                    <motion.div 
+                      className="absolute inset-0 border-4 border-t-amber-500 rounded-full"
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                    ></motion.div>
+                  </div>
+                </div>}>
+                  <ModelViewer url={model.modelUrl} />
+                </Suspense>
               </div>
             </motion.div>
           ) : (
@@ -132,19 +149,10 @@ export function ModelDetail({ model }: { model: Model3D }) {
                       transition={{ delay: 0.4 }}
                       className="prose prose-invert prose-amber max-w-none mb-6"
                     >
-                      <p className="text-zinc-300/90 text-lg leading-relaxed">
-                        {model.fullDescription}
-                      </p>
-                      <div className="mt-8 space-y-4">
-                        <h3 className="text-xl font-semibold text-white">Technical Specifications</h3>
-                        <ul className="list-disc pl-5 space-y-2 text-zinc-300/90">
-                          <li>Advanced AI Processing Unit</li>
-                          <li>Neural Network Acceleration</li>
-                          <li>Quantum-Resistant Encryption</li>
-                          <li>Multi-Protocol Support</li>
-                          <li>Extended Battery Life</li>
-                        </ul>
-                      </div>
+                      <div 
+                        className="text-zinc-300/90 text-lg leading-relaxed [&_ul]:mt-4 [&_ul]:space-y-2 [&_ul]:list-disc [&_ul]:pl-5 [&_li]:text-zinc-300/90"
+                        dangerouslySetInnerHTML={{ __html: model.fullDescription }}
+                      />
                     </motion.div>
                     <motion.button
                       onClick={handleViewModel}

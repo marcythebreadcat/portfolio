@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import * as React from "react";
 import { Suspense, useLayoutEffect } from "react";
@@ -33,15 +33,15 @@ function Loader() {
   );
 }
 
-export function ModelViewer({ url }: { url: string }) {
+export default function ModelViewer() {
   return (
-    <div className="w-full h-full">
+    <div className="w-screen h-screen">
       <Canvas shadows camera={{ fov: 50 }}>
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} castShadow />
 
         <Stage environment="city" intensity={0.5}>
-          <Model url={url} />
+          <Model url={"/portfolio/models/pinal.glb"} />
         </Stage>
 
         <OrbitControls
@@ -55,5 +55,3 @@ export function ModelViewer({ url }: { url: string }) {
     </div>
   );
 }
-
-export { Loader };
